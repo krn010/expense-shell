@@ -25,9 +25,11 @@ systemctl daemon-reload
 systemctl enable backend
 systemctl restart backend
 
-https://github.com/krn010/expense-shell.git
+dnf install mysql -y
 
 mysql -h 172.31.47.169 -uroot -pExpenseApp@1 < /app/schema/backend.sql
+
+
 
 
 
