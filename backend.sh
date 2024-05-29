@@ -26,3 +26,4 @@ systemctl enable backend
 systemctl restart backend
 
 mysql -h 172.31.47.169 -uroot -pExpenseApp@1 < /app/schema/backend.sql
+
