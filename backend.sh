@@ -5,7 +5,7 @@ echo -e "\e[32mEnable NodeJS 18 Version\e[0m"
 dnf module enable nodejs:18 -y >>/tmp/expense.log
 
 echo -e "\e[32mInstall NodeJS\e[0m"
-dnf install nodejs -y
+dnf install nodejs -y >>/tmp/expe
 
 echo -e "\e[32mConfigure Backend Service\e[0m"
 cp backend.service /etc/systemd/system/backend.service >>/tmp/expense.log
@@ -19,7 +19,7 @@ rm -rf /app >>/tmp/expense.log
 echo -e "\e[32mCreate Application Directory\e[0m"
 mkdir /app >>/tmp/expense.log
 
-echo -e "\e[32mDownload Application Content\e[0m"
+echo -e "\e[32mDownloading Application Content\e[0m"
 curl -o /tmp/backend.zip https://expense-artifacts.s3.amazonaws.com/backend.zip >>/tmp/expense.log
 cd /app
 
