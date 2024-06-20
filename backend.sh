@@ -27,6 +27,10 @@ App_Prereq "/app"
 
 Head "Reloading SystemD and Starting Backend Service"
 
+Head "Downloading Application Dependencies"
+  npm install &>>${log_file}
+  echo $?
+
 systemctl daemon-reload &>>${log_file}
 systemctl enable backend &>>${log_file}
 systemctl restart backend &>>${log_file}

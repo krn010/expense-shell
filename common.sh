@@ -27,8 +27,6 @@ App_Prereq () {
   unzip /tmp/${component}.zip &>>${log_file}
   echo $?
 
-  Head "Downloading Application Dependencies"
-  npm install &>>${log_file}
-  echo $?
+
 
 }
