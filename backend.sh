@@ -1,6 +1,6 @@
 MYSQL_PASSWORD=$1
 
-source commom.sh
+source common.sh
 
 Head "Disable NodeJS Default Version"
 dnf module disable nodejs -y &>>${log_file}
