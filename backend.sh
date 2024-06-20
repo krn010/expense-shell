@@ -28,8 +28,8 @@ App_Prereq "/app"
 
 
 Head "Downloading Application Dependencies"
-  npm install &>>${log_file}
-  echo $?
+npm install &>>${log_file}
+echo $?
 
 Head "Reloading SystemD and Starting Backend Service"
 systemctl daemon-reload &>>${log_file}
