@@ -43,7 +43,7 @@ echo -e "\e[32mInstall MySQL Client\e[0m"
 dnf install mysql -y &>>${log_file}
 
 echo -e "\e[32mLoad Schema\e[0m"
-mysql -h 172.31.41.227 -uroot -p{MYSQL_PASSWORD} < /app/schema/backend.sql &>>${log_file}
+mysql -h 172.31.41.227 -uroot -p${MYSQL_PASSWORD} < /app/schema/backend.sql &>>${log_file}
 
 
 
