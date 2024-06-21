@@ -29,6 +29,7 @@ if [ $? = 0 ] ; then
 else
   echo FAILURE
   exit 1
+fi
 
 Head "Configure Backend Service"
 cp backend.service /etc/systemd/system/backend.service &>>${log_file}
@@ -37,6 +38,7 @@ if [ $? = 0 ] ; then
 else
   echo FAILURE
   exit 1
+fi
 
 Head "Adding Application User"
 useradd expense &>>${log_file}
@@ -45,6 +47,7 @@ if [ $? = 0 ] ; then
 else
   echo FAILURE
   exit 1
+fi
 
 App_Prereq "/app"
 
@@ -57,6 +60,7 @@ if [ $? = 0 ] ; then
 else
   echo FAILURE
   exit 1
+fi
 
 Head "Reloading SystemD and Starting Backend Service"
 systemctl daemon-reload &>>${log_file}
@@ -67,6 +71,7 @@ if [ $? = 0 ] ; then
 else
   echo FAILURE
   exit 1
+fi
 
 Head "Install MySQL Client"
 dnf install mysql -y &>>${log_file}
@@ -75,6 +80,8 @@ if [ $? = 0 ] ; then
 else
   echo FAILURE
   exit 1
+fi
+
 
 Head "Load Schema"
 mysql -h 172.31.41.227 -uroot -p${MYSQL_PASSWORD} < /app/schema/backend.sql &>>${log_file}
