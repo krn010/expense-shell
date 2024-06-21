@@ -83,6 +83,7 @@ if [ $? = 0 ] ; then
 else
   echo FAILURE
   exit 1
+fi
 
 
 
