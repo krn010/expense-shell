@@ -1,6 +1,7 @@
 MYSQL_PASSWORD=$1
-if [ -z ${MYSQL_PASSWORD} ]; then
-  echo "Password is missing"
+if [ -z "${MYSQL_PASSWORD}" ]; then
+  echo "MYSQL Password is missing"
+  exit 1
 fi
 component=backend
 
