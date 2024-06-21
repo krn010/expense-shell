@@ -30,3 +30,13 @@ App_Prereq () {
 
 
 }
+
+Stat ()  {
+
+          if [ $1 = 0 ] ; then
+            echo SUCCESS
+          else
+            echo FAILURE
+            exit 1
+          fi
+}
